@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import QRCode from "react-qr-code";
 import styles from "../styles/Home.module.css";
+import Image from "next/image";
 
 const generator = () => {
   const [qrCodeValue, setQrCodeValue] = useState("");
   const [formData, setFormData] = useState({
     payeeName: "",
     upiId: "",
-    transactionAmount: 0,
+    transactionAmount: null,
     description: "",
   });
 
@@ -18,18 +19,23 @@ const generator = () => {
   }
   const generateQR = (e) => {
     e.preventDefault();
-    
-    if(formData.payeeName == "" || formData.upiId == "" || formData.transactionAmount == 0 || formData.description == ""){
-        alert("Please fill all the fields");
-        return;
+
+    if (
+      formData.payeeName == "" ||
+      formData.upiId == "" ||
+      formData.transactionAmount == 0 ||
+      formData.description == ""
+    ) {
+      alert("Please fill all the fields");
+      return;
     }
-    const qrValue = `upi://pay?pa=${formData.upiId}&pn=${formData.payeeName}&am=${formData.transactionAmount}&tn=${formData.description}&cu=INR`;
-    setQrCodeValue(qrValue);
     if (typeof window !== "undefined") {
       console.log("window is undefined");
       let count = localStorage.getItem("count");
       localStorage.setItem("count", String(Number(count) + 1));
     }
+    const qrValue = `upi://pay?pa=${formData.upiId}&pn=${formData.payeeName}&am=${formData.transactionAmount}&tn=${formData.description}&cu=INR`;
+    setQrCodeValue(qrValue);
   };
 
   return (
@@ -43,12 +49,17 @@ const generator = () => {
             Simplify your payment process
           </h2>
         </div>
-        <div className="grid grid-cols-2 w-3/4 bg-white p-8 m-10 rounded-3xl h-fit ">
+        <div className="grid grid-cols-2 w-10/12 bg-white p-8 m-10 rounded-3xl h-fit ">
           {/* div for User Inputs */}
-          <form action="" className="m-auto w-3/4 space-y-4">
+          <form
+            autocomplete="on"
+            action=""
+            className="m-auto w-10/12 space-y-4 autofill:bg-white "
+          >
             <div className="space-y-2">
-              <label htmlFor="">Payee/Merchant Name</label>
+              <label htmlFor="payeeName">Payee/Merchant Name</label>
               <input
+                name="payeeName"
                 value={formData.payeeName}
                 onChange={(e) =>
                   setFormData({ ...formData, payeeName: e.target.value })
@@ -59,8 +70,9 @@ const generator = () => {
               />
             </div>
             <div className="space-y-2">
-              <label htmlFor="">UPI ID</label>
+              <label htmlFor="upiId">UPI ID</label>
               <input
+                name="upiId"
                 value={formData.upiId}
                 onChange={(e) =>
                   setFormData({ ...formData, upiId: e.target.value })
@@ -72,8 +84,10 @@ const generator = () => {
             </div>
             <div className="space-y-2">
               {" "}
-              <label htmlFor="">Transaction Amount</label>
+              <label htmlFor="transactionAmount">Transaction Amount</label>
               <input
+                min={0}
+                max={5000}
                 value={formData.transactionAmount}
                 onChange={(e) =>
                   setFormData({
@@ -88,8 +102,9 @@ const generator = () => {
             </div>
             <div className="space-y-2">
               {" "}
-              <label htmlFor="">Description (Notes)</label>
+              <label htmlFor="description">Description (Notes)</label>
               <input
+                name="description"
                 value={formData.description}
                 onChange={(e) =>
                   setFormData({ ...formData, description: e.target.value })
@@ -107,20 +122,64 @@ const generator = () => {
             </button>
           </form>
           <div>
-            <div>
-              <div>Generate QR</div>
+            <div className="relative flex-col h-full">
+              <div>QR Code </div>
+              <div className="relative my-4   mx-auto rounded-2xl overflow-hidden shadow-slate-200/50 shadow-2xl h-1/2 items-center">
+              <Image
+                      src="./brandhive.svg"
+                      width="40"
+                      alt="gpay"
+                      height="30"
+                      className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 "
+                    />
+                {qrCodeValue != "" && (
+                  <QRCode
+                    value={qrCodeValue}
+                    className="w-full h-full text-red-300"
+                  />
+                )}
+              </div>
 
-              {qrCodeValue != "" && (
-                <QRCode
-                  value={qrCodeValue}
-                  className={styles.containerColumn}
-                />
-              )}
-              <input
-                onChange={(e) => {
-                  setQrCodeValue(e.target.value);
-                }}
-              />
+              <div className="absolute bottom-0">
+                <div className="flex flex-col space-y-10 ">
+                  <div className="grid grid-cols-2 gap-4 items-center justify-items-center ">
+                  <Image
+                      src="./up01.svg"
+                      width="130"
+                      alt="gpay"
+                      height="30"
+                    
+                    />
+                    <Image src="./up02.svg" width="90" alt="gpay" height="30" />
+                  </div>
+                  <div className="grid grid-cols-4 gap-4 items-center justify-items-center ">
+                    <Image
+                      src="./bottom02.svg"
+                      width="50"
+                      alt="gpay"
+                      height="30"
+                    />
+                    <Image
+                      src="./bottom01.svg"
+                      width="50"
+                      alt="gpay"
+                      height="30"
+                    />
+                    <Image
+                      src="./bottom03.svg"
+                      width="80"
+                      alt="gpay"
+                      height="30"
+                    />
+                    <Image
+                      src="./bottom04.svg"
+                      width="140"
+                      alt="gpay"
+                      height="60"
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
