@@ -3,7 +3,7 @@ import styles from "../styles/Home.module.css";
 import Image from "next/image";
 import { useState } from "react";
 
-const generator = () => {
+const Generator = () => {
   const [qrCodeValue, setQrCodeValue] = useState("");
   const [formData, setFormData] = useState({
     payeeName: "",
@@ -121,9 +121,9 @@ const generator = () => {
             </button>
           </form>
           <div>
-            <div className="relative flex-col h-full">
-              <div>QR Code </div>
-              <div className="relative my-4   mx-auto rounded-2xl overflow-hidden shadow-slate-200/50 shadow-2xl h-1/2 items-center">
+            <div className="relative flex-col h-full ">
+              
+              <div className="relative my-4   mx-auto rounded-2xl overflow-hidden  h-1/2 items-center">
                 <Image
                   src="./brandhive.svg"
                   width="40"
@@ -139,7 +139,7 @@ const generator = () => {
                 )}
               </div>
 
-              <div className="absolute bottom-0">
+              <div className="absolute bottom-8">
                 <div className="flex flex-col space-y-10 ">
                   <div className="grid grid-cols-2 gap-4 items-center justify-items-center ">
                     <Image
@@ -186,4 +186,4 @@ const generator = () => {
   );
 };
 
-export default generator;
+export default Generator;
