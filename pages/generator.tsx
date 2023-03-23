@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 
 const Generator = () => {
-  const [qrCodeValue, setQrCodeValue] = useState("sf");
+  const [qrCodeValue, setQrCodeValue] = useState("");
   const [formData, setFormData] = useState({
     payeeName: "",
     upiId: "",
