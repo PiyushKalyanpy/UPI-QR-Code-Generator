@@ -1,23 +1,22 @@
-import React, { useState } from "react";
 import QRCode from "react-qr-code";
 import styles from "../styles/Home.module.css";
 import Image from "next/image";
+import { useState } from "react";
 
 const generator = () => {
   const [qrCodeValue, setQrCodeValue] = useState("");
   const [formData, setFormData] = useState({
     payeeName: "",
     upiId: "",
-    transactionAmount: null,
+    transactionAmount: 0,
     description: "",
   });
-
   if (typeof window !== "undefined") {
     if (localStorage.getItem("count") == null) {
       localStorage.setItem("count", String(0));
     }
   }
-  const generateQR = (e) => {
+  const generateQR = (e: any) => {
     e.preventDefault();
 
     if (
@@ -52,7 +51,7 @@ const generator = () => {
         <div className="grid grid-cols-2 w-10/12 bg-white p-8 m-10 rounded-3xl h-fit ">
           {/* div for User Inputs */}
           <form
-            autocomplete="on"
+            autoComplete="on"
             action=""
             className="m-auto w-10/12 space-y-4 autofill:bg-white "
           >
@@ -125,13 +124,13 @@ const generator = () => {
             <div className="relative flex-col h-full">
               <div>QR Code </div>
               <div className="relative my-4   mx-auto rounded-2xl overflow-hidden shadow-slate-200/50 shadow-2xl h-1/2 items-center">
-              <Image
-                      src="./brandhive.svg"
-                      width="40"
-                      alt="gpay"
-                      height="30"
-                      className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 "
-                    />
+                <Image
+                  src="./brandhive.svg"
+                  width="40"
+                  alt="gpay"
+                  height="30"
+                  className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 "
+                />
                 {qrCodeValue != "" && (
                   <QRCode
                     value={qrCodeValue}
@@ -143,12 +142,11 @@ const generator = () => {
               <div className="absolute bottom-0">
                 <div className="flex flex-col space-y-10 ">
                   <div className="grid grid-cols-2 gap-4 items-center justify-items-center ">
-                  <Image
+                    <Image
                       src="./up01.svg"
                       width="130"
                       alt="gpay"
                       height="30"
-                    
                     />
                     <Image src="./up02.svg" width="90" alt="gpay" height="30" />
                   </div>
