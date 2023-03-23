@@ -29,7 +29,6 @@ const Generator = () => {
       return;
     }
     if (typeof window !== "undefined") {
-      console.log("window is undefined");
       let count = localStorage.getItem("count");
       localStorage.setItem("count", String(Number(count) + 1));
     }
@@ -190,7 +189,7 @@ const Generator = () => {
           {/* div for Copyright and Tag */}
         </div>
         <div className="flex  col-span-2 m-4 self-center w-full items-center">
-          <h6 className="text-sm m-auto text-slate-400 text-center text-align-center font-urbanist">
+          <h6 className=" m-auto text-slate-400 text-center text-align-center font-urbanist">
             Copyright © 2023 | developed by
             <span className="text-blue-600 font-inter font-medium">
               <a href="https://www.linkedin.com/in/piyush-kalyan/">

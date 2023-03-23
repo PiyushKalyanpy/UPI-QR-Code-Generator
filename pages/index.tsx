@@ -27,7 +27,7 @@ export default function Home() {
         <meta property="og:url" content="https://shufflepay.vercel.app/" />
         <meta property="og:title" content="ShufflePay" />
         <meta property="og:description" content="This is a web application that allows users to generate UPI QR codes easily. . Users can enter their UPI ID, amount, and description, and the app will generate a QR code that can be scanned by any UPI-compliant mobile app to make a payment." />
-        <meta property="og:image" content="https://shufflepay.vercel.app/brandhive.svg" />
+        <meta property="og:image" content="https://shufflepay.vercel.app/shufflepay.svg" />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="en_IN" />
         <meta property="og:site_name" content="ShufflePay" />
