@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 
 const Generator = () => {
-  const [qrCodeValue, setQrCodeValue] = useState("");
+  const [qrCodeValue, setQrCodeValue] = useState("sf");
   const [formData, setFormData] = useState({
     payeeName: "",
     upiId: "",
@@ -38,23 +38,22 @@ const Generator = () => {
   };
 
   return (
-    <div className="flex flex-col items-center w-full md:h-screen max:h-fit   overflow-hidden bg-slate-100">
+    <div className="flex flex-col items-center w-full lg:h-screen max:h-fit   overflow-hidden bg-slate-100">
       <div className="flex flex-col items-center m-auto ">
         <div className="flex flex-col space-y-4 items-center sm:pt-10">
-          <h1 className="font-bold font-urbanist  text-4xl pt-10 lg:pt-0 text-slate-800 ">
+          <h1 className="font-bold font-urbanist text-center text-4xl pt-10 lg:pt-0 text-slate-800 ">
             Generate UPI QR code{" "}
           </h1>
           <h2 className=" text-xl font-inter text-slate-500 text-center">
             Simplify your payment process with
           </h2>
-          <h1 className="text-sky-500 font-extrabold text-3xl m-2 bg-gradient-to-r from-blue-600 via-sky-400 to-pink-400 inline-block text-transparent bg-clip-text font-urbanist">
+          <h2 className="text-sky-500 font-extrabold text-3xl m-2 bg-gradient-to-r from-blue-600 via-sky-400 to-pink-400 inline-block text-transparent bg-clip-text font-urbanist">
             {" "}
             ShufflePay
-          </h1>
+          </h2>
         </div>
-        <div className="grid lg:grid-cols-2 gap-10  w-10/12 lg:w-1/2 bg-white p-8 m-10 rounded-3xl h-fit ">
+        <div className="grid s:grid-rows-2 lg:grid-cols-2 gap-18  w-10/12 lg:w-1/2 bg-white p-4 m-10 rounded-3xl h-fit ">
           {/* div for User Inputs */}
-
           <form
             autoComplete="on"
             action=""
@@ -133,11 +132,9 @@ const Generator = () => {
               Generate QR code
             </button>
           </form>
-
           {/* div for QR Code */}
-
           <div className="flex flex-col  gap-4 h-full">
-            <div className="relative my-4  w-3/4 md:w-1/2 md:mt-10 m-auto md:h-64 mx-auto rounded-3xl overflow-hidden  items-center">
+            <div className="relative my-4 mt-10  w-3/4 md:w-1/2 md:mt-10 m-auto md:h-64 mx-auto rounded-3xl overflow-hidden  items-center">
               <Image
                 src="./brandhive.svg"
                 width="40"
@@ -152,18 +149,19 @@ const Generator = () => {
                 />
               )}
             </div>
-            <div className="flex my-4  h-1/2 mx-auto  overflow-hidden  items-center">
-              <div className="flex flex-col space-y-10  mt-auto ">
+
+            <div className="flex h-1/2 md:mx-10  overflow-hidden  items-center">
+              <div className="flex flex-col space-y-10 mb-8  mt-auto ">
                 <div className="grid grid-cols-2 gap-4 items-center justify-items-center ">
-                  <Image src="./up01.svg" width="130" alt="gpay" height="30" />
-                  <Image src="./up02.svg" width="90" alt="gpay" height="30" />
+                  <Image src="./up01.svg" width="110" alt="gpay" height="30" />
+                  <Image src="./up02.svg" width="70" alt="gpay" height="30" />
                 </div>
-                <div className="grid grid-cols-4 gap-4 items-center justify-items-center ">
+                <div className="grid grid-cols-4 gap-2 items-center justify-items-center ">
                   <Image
-                    src="./bottom02.svg"
-                    width="45"
+                    src="./bottom04.svg"
+                    width="140"
                     alt="gpay"
-                    height="30"
+                    height="60"
                   />
                   <Image
                     src="./bottom01.svg"
@@ -171,22 +169,36 @@ const Generator = () => {
                     alt="gpay"
                     height="30"
                   />
+
                   <Image
                     src="./bottom03.svg"
                     width="100"
                     alt="gpay"
                     height="30"
                   />
+
                   <Image
-                    src="./bottom04.svg"
-                    width="190"
+                    src="./bottom02.svg"
+                    width="45"
                     alt="gpay"
-                    height="60"
+                    height="30"
                   />
                 </div>
               </div>
             </div>
           </div>
+          {/* div for Copyright and Tag */}
+        </div>
+        <div className="flex  col-span-2 m-4 self-center w-full items-center">
+          <h6 className="text-sm m-auto text-slate-400 text-center text-align-center font-urbanist">
+            Copyright © 2023 | developed by
+            <span className="text-blue-600 font-inter font-medium">
+              <a href="https://www.linkedin.com/in/piyush-kalyan/">
+                {" "}
+                Piyush Kalyan{" "}
+              </a>
+            </span>
+          </h6>
         </div>
       </div>
     </div>
@@ -194,3 +206,7 @@ const Generator = () => {
 };
 
 export default Generator;
+
+// <h6 className="text-sm  text-slate-400 text-center font-urbanist">Copyright © 2023 | developed by
+//           <span className="text-blue-400"><a href="https://www.linkedin.com/in/piyush-kalyan/"> Piyush Kalyan   </a></span>
+//           </h6>
