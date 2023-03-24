@@ -8,7 +8,7 @@ const Generator = () => {
   const [formData, setFormData] = useState({
     payeeName: "",
     upiId: "",
-    transactionAmount: 0,
+    transactionAmount: "",
     description: "",
   });
   if (typeof window !== "undefined") {
@@ -22,7 +22,7 @@ const Generator = () => {
     if (
       formData.payeeName == "" ||
       formData.upiId == "" ||
-      formData.transactionAmount == 0 ||
+      formData.transactionAmount == "" ||
       formData.description == ""
     ) {
       alert("Please fill all the fields");
@@ -63,7 +63,7 @@ const Generator = () => {
                 Payee/Merchant Name
               </label>
               <input
-              id="payeeName"
+                id="payeeName"
                 name="payeeName"
                 value={formData.payeeName}
                 onChange={(e) =>
@@ -79,7 +79,8 @@ const Generator = () => {
                 UPI ID
               </label>
               <input
-              id="upiId"
+              autoComplete="on"
+                id="upiId"
                 name="upiId"
                 value={formData.upiId}
                 onChange={(e) =>
@@ -96,14 +97,14 @@ const Generator = () => {
                 Transaction Amount
               </label>
               <input
-              id="transactionAmount"
+                id="transactionAmount"
                 min={0}
                 max={5000}
                 value={formData.transactionAmount}
                 onChange={(e) =>
                   setFormData({
                     ...formData,
-                    transactionAmount: Number(e.target.value),
+                    transactionAmount: e.target.value,
                   })
                 }
                 type="number"
@@ -117,7 +118,7 @@ const Generator = () => {
                 Description (Notes)
               </label>
               <input
-              id="description"
+                id="description"
                 name="description"
                 value={formData.description}
                 onChange={(e) =>
