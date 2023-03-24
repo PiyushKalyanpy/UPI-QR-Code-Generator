@@ -2,6 +2,8 @@ import QRCode from "react-qr-code";
 import styles from "../styles/Home.module.css";
 import Image from "next/image";
 import { useState } from "react";
+import downloadjs from "downloadjs";
+import html2canvas from "html2canvas";
 
 const Generator = () => {
   const [qrCodeValue, setQrCodeValue] = useState("");
@@ -34,6 +36,17 @@ const Generator = () => {
     }
     const qrValue = `upi://pay?pa=${formData.upiId}&pn=${formData.payeeName}&am=${formData.transactionAmount}&tn=${formData.description}&cu=INR`;
     setQrCodeValue(qrValue);
+  };
+  const handleCaptureClick = async () => {
+    const qrCodeElement = document.querySelector<HTMLElement>(".qrCode");
+    if (!qrCodeElement) return;
+    const canvas = await html2canvas(qrCodeElement);
+    const dataURL = canvas.toDataURL("image/png");
+    downloadjs(
+      dataURL,
+      `${formData.payeeName + formData.transactionAmount}.png`,
+      "image/png"
+    );
   };
 
   return (
@@ -79,7 +92,7 @@ const Generator = () => {
                 UPI ID
               </label>
               <input
-              autoComplete="on"
+                autoComplete="on"
                 id="upiId"
                 name="upiId"
                 value={formData.upiId}
@@ -137,7 +150,25 @@ const Generator = () => {
             </button>
           </form>
           {/* div for QR Code */}
-          <div className="flex flex-col  gap-4 h-full">
+          <div className="flex flex-col  gap-4 h-full qrCode">
+            {qrCodeValue ? (
+              <div className=" sacle-[2] absolute my-8 w-8 h-8  active:bg-slate-200  bg-gray-100 rounded-full items-center">
+                <div
+                  onClick={handleCaptureClick}
+                  className="flex m-auto  items-center"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    className="w-6 h-6 text-gray-500 m-auto"
+                  >
+                    <path d="M12 1.5a.75.75 0 01.75.75V7.5h-1.5V2.25A.75.75 0 0112 1.5zM11.25 7.5v5.69l-1.72-1.72a.75.75 0 00-1.06 1.06l3 3a.75.75 0 001.06 0l3-3a.75.75 0 10-1.06-1.06l-1.72 1.72V7.5h3.75a3 3 0 013 3v9a3 3 0 01-3 3h-9a3 3 0 01-3-3v-9a3 3 0 013-3h3.75z" />
+                  </svg>
+                </div>
+              </div>
+            ) : null}
+
             <div className="relative my-4 mt-10  w-3/4 md:w-1/2 md:mt-10 m-auto md:h-64 mx-auto rounded-3xl overflow-hidden  items-center">
               <Image
                 src="./brandhive.svg"
