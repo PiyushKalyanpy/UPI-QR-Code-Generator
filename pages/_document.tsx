@@ -7,6 +7,7 @@ export default function Document() {
       <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#fff" />
         <title>ShufflePay - Generate UPI QR code</title>
+        <meta name="google-site-verification" content="PUN3pQlnCXje773_cMwqlyNJhxbWWP_kLfqpRkptS_Y" />
         <link rel="canonical" href="https://shufflepay.vercel.app/generator" />
         <meta
           name="description"
