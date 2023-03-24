@@ -63,6 +63,7 @@ const Generator = () => {
                 Payee/Merchant Name
               </label>
               <input
+              id="payeeName"
                 name="payeeName"
                 value={formData.payeeName}
                 onChange={(e) =>
@@ -78,6 +79,7 @@ const Generator = () => {
                 UPI ID
               </label>
               <input
+              id="upiId"
                 name="upiId"
                 value={formData.upiId}
                 onChange={(e) =>
@@ -94,6 +96,7 @@ const Generator = () => {
                 Transaction Amount
               </label>
               <input
+              id="transactionAmount"
                 min={0}
                 max={5000}
                 value={formData.transactionAmount}
@@ -114,6 +117,7 @@ const Generator = () => {
                 Description (Notes)
               </label>
               <input
+              id="description"
                 name="description"
                 value={formData.description}
                 onChange={(e) =>
