@@ -44,7 +44,7 @@ export default function Home() {
     setQrCodeValue(qrValue);
   };
   const handleCaptureClick = async () => {
-    setShowDownloadButton(false)
+    
     const qrCodeElement = document.querySelector<HTMLElement>(".qrCode");
     if (!qrCodeElement) return;
     const canvas = await html2canvas(qrCodeElement);
