@@ -1,9 +1,10 @@
 import QRCode from "react-qr-code";
 import styles from "../styles/Home.module.css";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import downloadjs from "downloadjs";
 import html2canvas from "html2canvas";
+import PWADownloadButton from "../Components/PWADownloadButton";
 
 const Generator = () => {
   const [qrCodeValue, setQrCodeValue] = useState("");
@@ -48,6 +49,8 @@ const Generator = () => {
       "image/png"
     );
   };
+
+  
 
   return (
     <div className="flex flex-col items-center w-full lg:h-screen max:h-fit   overflow-hidden bg-slate-100">
