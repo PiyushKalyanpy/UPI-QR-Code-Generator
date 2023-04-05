@@ -205,7 +205,7 @@ export default function Home() {
              
               {qrCodeValue != "" && (
                 <>
-                <p className='text-gray-300 font-urbanist text-center '>shufflepay</p>
+                {/* <p className='text-gray-300 font-urbanist text-center '>shufflepay</p> */}
                 
                 <QRCode
                   value={qrCodeValue}
