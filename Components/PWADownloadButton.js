@@ -5,22 +5,6 @@ function PWADownloadButton() {
 
   
 
-  //   const handleInstallClick = () => {
-  //     if (deferredPrompt) {
-  //       deferredPrompt.prompt();
-  //       deferredPrompt.userChoice.then((choiceResult) => {
-  //         if (choiceResult.outcome === "accepted") {
-  //           console.log("User accepted the install prompt");
-  //         } else {
-  //           console.log("User dismissed the install prompt");
-  //         }
-  //         setDeferredPrompt(null);
-  //       });
-  //     } else {
-  //       console.log("deferredPrompt is not defined");
-  //     }
-  //   };
-
   return (
     <div>
       {/* Your app content */}sdf
@@ -37,9 +21,3 @@ function PWADownloadButton() {
 
 export default PWADownloadButton;
 
-// e.preventDefault();
-// console.log(e);
-// deferredPrompt = e;
-// console.log("de", deferredPrompt);
-// showInstallPromotion();
-// console.log(`'beforeinstallprompt' event was fired.`);
