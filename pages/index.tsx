@@ -94,6 +94,14 @@ export default function Home() {
       
       <main className={styles.main}>
         <div className="flex flex-col items-center w-full lg:h-screen max:h-fit   overflow-hidden bg-slate-100">
+          <nav>
+            <ul className="flex flex-row items-center gap-8 m-8">
+              <li><a href="#">How to use</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">FAQ's</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </nav>
           <div className="flex flex-col items-center m-auto ">
             <div className="flex flex-col space-y-4 items-center sm:pt-10">
               <h1 className="font-bold font-urbanist text-center text-4xl pt-10 lg:pt-0 text-slate-800 ">
