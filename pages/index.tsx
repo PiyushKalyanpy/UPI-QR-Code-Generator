@@ -54,6 +54,11 @@ export default function Home() {
       "image/png"
     );
   };
+
+  useEffect(() => {
+    setQrCodeValue('')
+  },[formData])
+
   return (
     <>
       <Head>
@@ -91,7 +96,7 @@ export default function Home() {
         <link rel="icon" type="image/png" sizes="32x32" href="/brandhive.svg" />
         <link rel="icon" type="image/png" sizes="16x16" href="/brandhive.svg" />
       </Head>
-      
+
       <main className={styles.main}>
         <div className="flex flex-col items-center w-full lg:h-screen max:h-fit   overflow-hidden bg-slate-100">
           <div className="flex flex-col items-center m-auto ">
