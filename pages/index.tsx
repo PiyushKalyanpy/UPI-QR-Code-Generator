@@ -187,7 +187,7 @@ export default function Home() {
                     }
                     type="text"
                     className="w-full p-2 border border-slate-300 rounded-lg focus:outline-none focus:ring focus:border-slate-400"
-                    placeholder="Description (Notes)"
+                    placeholder="Description"
                   />
                 </div>
                 <button
