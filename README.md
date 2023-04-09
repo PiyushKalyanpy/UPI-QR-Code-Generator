@@ -41,6 +41,13 @@ When you are ready to start work on an issue:
 # License
 ShufflePay is licensed under the MIT License - see the [License File](LICENSE) for details.
 
+# Contributors
+A hall of fame for those who have contributed to this repo. Thanks once again for your valuable contributions. Kudos !!!
+<br>
+
+<a href="https://github.com/PiyushKalyanpy/UPI-QR-Code-Generator/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=PiyushKalyanpy/UPI-QR-Code-Generator" />
+</a>
 
 # Support
 Do give us a ⭐️ for showing your support...............
