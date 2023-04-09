@@ -103,7 +103,7 @@ export default function Home() {
             <ul className="flex flex-row items-center gap-8 m-8">
               <li><a href="#">How to use</a></li>
               <li><a href="#">About Us</a></li>
-              <li><a href="#">FAQ's</a></li>
+              <li><a href="#">FAQ&apos;s</a></li>
               <li><a href="#">Contact Us</a></li>
             </ul>
           </nav>
