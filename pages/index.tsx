@@ -8,6 +8,7 @@ import { useState, useEffect } from "react";
 import downloadjs from "downloadjs";
 import html2canvas from "html2canvas";
 import PWADownloadButton from "../Components/PWADownloadButton";
+import {NavBarHome } from "../Components/allComponents";
 
 export default function Home() {
   const router = useRouter();
@@ -99,6 +100,7 @@ export default function Home() {
 {/* Main Section  */}
       <main className={styles.main}>
         <div className="flex flex-col items-center w-full lg:h-screen max:h-fit   overflow-hidden bg-slate-100">
+          <NavBarHome />
           <div className="flex flex-col items-center m-auto ">
             <div className="flex flex-col space-y-4 items-center sm:pt-10">
               <h1 className="font-bold font-urbanist text-center text-4xl pt-10 lg:pt-0 text-slate-800 ">
