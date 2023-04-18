@@ -1,7 +1,10 @@
-const Termsandcondition = () => {
+
+const TermsAndCondition = () => {
     return (
-    Termsandcondition
+        <div>
+            terms and conditions
+        </div>
     );
-    };
-    
-    export default Termsandcondition;
+}
+
+export default TermsAndCondition;

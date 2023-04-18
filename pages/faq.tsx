@@ -1,7 +1,10 @@
 const Faq = () => {
     return (
-    Faq
+
+        <div>
+            faq
+        </div>
     );
-    };
-    
-    export default Faq;
+}
+
+export default FAQ;

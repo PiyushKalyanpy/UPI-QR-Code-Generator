@@ -1,7 +1,10 @@
-const Disclaimer = () => {
+
+const Discalimer = () => {
     return (
-    Disclaimer
+        <div>
+            disclaimer
+        </div>
     );
-    };
-    
-    export default Disclaimer;
+}
+
+export default Discalimer;
