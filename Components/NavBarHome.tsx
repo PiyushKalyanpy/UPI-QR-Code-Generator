@@ -9,8 +9,8 @@ const NavBarHome = () => {
         ShufflePay
       </h2>
 
-      {/* Nav bar links  */}
-      <div className="flex flex-row items-center">
+      {/* Nav bar links for md and lg */}
+      <div className="hidden md:flex flex-row items-center">
         <ul className="flex justify-center">
           <li className="m-2">
             <Link
@@ -46,6 +46,10 @@ const NavBarHome = () => {
           </li>
         </ul>
       </div>
+
+      {/* Nav bar links for sm */}
+
+      {/* 🔴 add code here for Menu button (sidebar) */}
     </div>
   );
 };
