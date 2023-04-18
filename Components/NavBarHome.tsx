@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const NavBarHome = () => {
   return (
-    <div className="flex w-full flex-row justify-between px-40 bg-slate-200">
+    <div className="flex w-full flex-row justify-between px-40 border-b py-2">
       {/* Branding : logo */}
       <h2 className="text-sky-500 font-extrabold text-3xl m-2 bg-gradient-to-r from-blue-600 via-sky-400 to-pink-400 inline-block text-transparent bg-clip-text font-urbanist">
         {" "}
@@ -10,12 +10,12 @@ const NavBarHome = () => {
       </h2>
 
       {/* Nav bar links  */}
-      <div>
+      <div className="flex flex-row items-center">
         <ul className="flex justify-center">
           <li className="m-2">
             <Link
               href="/underprogress"
-              className="text-sky-900 font-archivo hover:text-sky-400 hover:underline text-lg"
+              className="text-sky-900 font-inter font-medium hover:text-sky-400 hover:underline text-md"
             >
               About
             </Link>
@@ -23,7 +23,7 @@ const NavBarHome = () => {
           <li className="m-2">
             <Link
               href="/underprogress"
-              className="text-sky-900 font-archivo hover:text-sky-400 hover:underline text-lg"
+              className="text-sky-900 font-inter font-medium hover:text-sky-400 hover:underline text-md"
             >
               Contact
             </Link>
@@ -31,7 +31,7 @@ const NavBarHome = () => {
           <li className="m-2">
             <Link
               href="/underprogress"
-              className="text-sky-900 font-archivo hover:text-sky-400 hover:underline text-lg"
+              className="text-sky-900 font-inter font-medium hover:text-sky-400 hover:underline text-md"
             >
               FAQ
             </Link>
@@ -39,7 +39,7 @@ const NavBarHome = () => {
           <li className="m-2">
             <Link
               href="/underprogress"
-              className="text-sky-900 font-archivo hover:text-sky-400 hover:underline text-lg"
+              className="text-sky-900 font-inter font-medium hover:text-sky-400 hover:underline text-md"
             >
               Disclaimer
             </Link>

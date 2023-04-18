@@ -109,10 +109,7 @@ export default function Home() {
               <h2 className=" text-xl font-inter text-slate-500 text-center">
                 Simplify your payment process with
               </h2>
-              <h2 className="text-sky-500 font-extrabold text-3xl m-2 bg-gradient-to-r from-blue-600 via-sky-400 to-pink-400 inline-block text-transparent bg-clip-text font-urbanist">
-                {" "}
-                ShufflePay
-              </h2>
+             
             </div>
             <div className="grid s:grid-rows-2 lg:grid-cols-2 gap-18  w-10/12 lg:w-1/2 bg-white p-4 m-10 rounded-3xl h-fit ">
               {/* div for User Inputs */}
