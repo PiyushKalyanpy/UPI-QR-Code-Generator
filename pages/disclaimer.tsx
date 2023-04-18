@@ -1,3 +1,4 @@
+
 const Discalimer = () => {
     return (
         <div>

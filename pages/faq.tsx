@@ -1,9 +1,10 @@
-const FAQ = () => {
+const Faq = () => {
     return (
+
         <div>
             faq
         </div>
     );
 }
 
-export default FAQ;
+export default Faq;
